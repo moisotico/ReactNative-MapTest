@@ -21,7 +21,7 @@ const PlacesListScreen = (props: any) => {
           onSelect={() => {
             props.navigation.navigate("PlaceDetail", {
               placeTitle: itemData.item.title,
-              placeId: itemData.item.id
+              placeId: itemData.item.id,
             });
           }}
         />

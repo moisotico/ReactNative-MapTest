@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import { HeaderTitle } from 'react-navigation-stack';
+// import { HeaderTitle } from 'react-navigation-stack';
 
 const PlacesDetailScreen = (props: any) => {
     return (
