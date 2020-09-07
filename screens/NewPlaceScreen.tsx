@@ -21,6 +21,7 @@ const Separator = () => <View style={styles.separator} />;
 
 const NewPlaceScreen = (props: any) => {
   const [titleValue, setTitleValue] = useState("");
+  const [selectedImage, setSelectedImage] = useState();
 
   const dispatch = useDispatch();
 
@@ -29,9 +30,13 @@ const NewPlaceScreen = (props: any) => {
     setTitleValue(text);
   };
 
+  const imageTakenHandler = (imagePath: any) => {
+    setSelectedImage(imagePath);
+  };
+
   //check redux
   const savePlaceHandler = () => {
-    dispatch(placesActions.addPlace(titleValue));
+    dispatch(placesActions.addPlace(titleValue, selectedImage));
     props.navigation.goBack();
   };
 
@@ -44,7 +49,7 @@ const NewPlaceScreen = (props: any) => {
           onChangeText={titleChangeHandler}
           value={titleValue}
         />
-        <ImagePicker />
+        <ImagePicker onImageTaken={imageTakenHandler} />
 
         <Separator />
 
