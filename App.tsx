@@ -15,7 +15,7 @@ const store = createStore(rootReducer, applyMiddleware(ReduxThunk));
 export default function App() {
   return (
     <Provider store={store}>
-      <PlacesNavigator />;
+      <PlacesNavigator />
     </Provider>
   );
 }

@@ -15,6 +15,9 @@ import { useDispatch } from "react-redux";
 
 import Colors from "../constants/Colors";
 import * as placesActions from "../store/places-actions";
+import ImagePicker from "../components/ImagePicker";
+
+const Separator = () => <View style={styles.separator} />;
 
 const NewPlaceScreen = (props: any) => {
   const [titleValue, setTitleValue] = useState("");
@@ -35,12 +38,16 @@ const NewPlaceScreen = (props: any) => {
   return (
     <ScrollView>
       <View style={styles.form}>
-        <Text style={styles.label}>New Place Screen</Text>
+        <Text style={styles.label}>Type the name of you new place</Text>
         <TextInput
           style={styles.textInput}
           onChangeText={titleChangeHandler}
           value={titleValue}
         />
+        <ImagePicker />
+
+        <Separator />
+
         <Button
           title="Save"
           color={Colors.primary}
@@ -69,6 +76,10 @@ const styles = StyleSheet.create({
     marginBottom: 15,
     paddingVertical: 5,
     paddingHorizontal: 2,
+  },
+  separator: {
+    marginVertical: 8,
+    borderBottomColor: "#737373",
   },
 });
 
