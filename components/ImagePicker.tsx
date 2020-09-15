@@ -10,7 +10,7 @@ const ImgPicker = (props: any) => {
   const [pickedImage, setPickedImage] = useState();
 
   const verifyPermissions = async () => {
-    const result = await Permissions.askAsync(Permissions.CAMERA);
+    const result = await Permissions.askAsync(Permissions.CAMERA_ROLL);
     if (result.status !== "granted") {
       Alert.alert(
         "Cannot run: Insufficient permissions",
@@ -23,8 +23,8 @@ const ImgPicker = (props: any) => {
   };
 
   const takeImageHandler = async () => {
-    const hasPermissions = await verifyPermissions();
-    if (!hasPermissions) {
+    const hasPermission = await verifyPermissions();
+    if (!hasPermission) {
       return;
     }
 
@@ -34,7 +34,7 @@ const ImgPicker = (props: any) => {
       quality: 0.6,
     });
     setPickedImage(image.uri);
-    props.onImageTake(image)
+    props.onImageTaken(image.uri);
   };
 
   return (
@@ -58,10 +58,11 @@ const ImgPicker = (props: any) => {
 const styles = StyleSheet.create({
   imagePicker: {
     alignItems: "center",
+    marginBottom: 15
   },
   imagePreview: {
     width: "100%",
-    height: 250,
+    height: 220,
     marginBottom: 10,
     justifyContent: "center",
     alignItems: "center",
@@ -71,7 +72,7 @@ const styles = StyleSheet.create({
   image: {
     width: "100%",
     height: "100%",
-  },
+  }
 });
 
 export default ImgPicker;

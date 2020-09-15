@@ -1,18 +1,17 @@
 
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-// import { HeaderTitle } from 'react-navigation-stack';
 
-const PlacesDetailScreen = (props: any) => {
+const PlaceDetailScreen = (props: any) => {
     return (
         <View>
-            <Text>PlacesDetailScreen</Text>
+            <Text>PlaceDetailScreen</Text>
         </View>
     );
 };
 
 
-PlacesDetailScreen.navigationOptions = (navData: any) => {
+PlaceDetailScreen.navigationOptions = (navData: any) => {
     return {
         headerTitle: navData.navigation.getParam('placeTitle')
     };
@@ -20,4 +19,4 @@ PlacesDetailScreen.navigationOptions = (navData: any) => {
 
 const styles = StyleSheet.create({ });
 
-export default PlacesDetailScreen;
+export default PlaceaDetailScreen;
