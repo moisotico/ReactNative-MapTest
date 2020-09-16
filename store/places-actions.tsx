@@ -38,9 +38,9 @@ export const addPlace = (title: string, image: any) => {
 export const loadPlaces = () => {
   return async (dispatch: any) => {
     try {
-      const dbResult = await fetchPlaces();
+      const dbResult: any = await fetchPlaces();
       console.log(dbResult);
-      dispatch({ type: SET_PLACES, places: [] });
+      dispatch({ type: SET_PLACES, places: dbResult.rows._array });
     } catch (err) {
       throw err;
     }

@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 
-import PropTypes, { InferProps } from "prop-types";
-
 import {
   ScrollView,
   View,
@@ -9,13 +7,13 @@ import {
   Text,
   TextInput,
   StyleSheet,
-  TextInputComponent,
 } from "react-native";
 import { useDispatch } from "react-redux";
 
 import Colors from "../constants/Colors";
 import * as placesActions from "../store/places-actions";
 import ImagePicker from "../components/ImagePicker";
+import LocationPicker from '../components/LocationPicker';
 
 const Separator = () => <View style={styles.separator} />;
 
@@ -50,7 +48,7 @@ const NewPlaceScreen = (props: any) => {
           value={titleValue}
         />
         <ImagePicker onImageTaken={imageTakenHandler} />
-
+        <LocationPicker />
         <Separator />
 
         <Button

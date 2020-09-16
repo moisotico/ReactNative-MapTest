@@ -19,4 +19,4 @@ PlaceDetailScreen.navigationOptions = (navData: any) => {
 
 const styles = StyleSheet.create({ });
 
-export default PlaceaDetailScreen;
+export default PlaceDetailScreen;

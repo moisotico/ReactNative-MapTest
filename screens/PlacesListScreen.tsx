@@ -1,4 +1,4 @@
-import React, { userEffect, useEffect } from "react";
+import React, { useEffect } from "react";
 import { View, Text, StyleSheet, Platform, FlatList } from "react-native";
 import { HeaderButtons, Item } from "react-navigation-header-buttons";
 import { useSelector, useDispatch } from "react-redux";
@@ -13,8 +13,7 @@ const PlacesListScreen = (props: any) => {
 
   useEffect(() => {
     dispatch(placesActions.loadPlaces());
-  }, [dispatch]
-  );
+  }, [dispatch]);
 
   return (
     <FlatList
@@ -39,7 +38,7 @@ const PlacesListScreen = (props: any) => {
 
 PlacesListScreen.navigationOptions = (navData: any) => {
   return {
-    headerTitle: "All Places",
+    headerTitle: ("All Places"),
     headerRight: (
       <HeaderButtons HeaderButtonComponent={HeaderButton}>
         <Item
